@@ -1,26 +1,29 @@
 {
-	"name" : "JP_MOD",
-	"description" : ""
-	"author" : "nbmd",
-	"contact" : "",
-	"version" : "1.0",
+	"name" : "JP_MOD_Unofficial",
+	"description" : "Customize for BLT2.0"
+	"author" : "nbmd, kash",
+	"contact" : "https://github.com/KashEight",
+	"version" : "1.0-unofficial",
 	"priority" : 1,
+    "blt_version": 2,
+    "color": "255 0 0",
+    "undisablable" : true, 
     "hooks" : [
         {   
             "hook_id" : "lib/managers/localizationmanager",
-            "script_path" : "lua/jp_m.luac"
+            "script_path" : "JPLocilize.lua"
         },
         {   
             "hook_id" : "lib/units/beings/player/playersound",
-            "script_path" : "lua/jp_p.luac"
+            "script_path" : "JPLocilize.lua"
         },
         {   
             "hook_id" : "lib/managers/menumanager",
-            "script_path" : "lua/jp_mn.luac"
+            "script_path" : "JPLocilize.lua"
         },
         {   
             "hook_id" : "lib/units/props/timergui",
-            "script_path" : "lua/jp_tg.luac"
+            "script_path" : "JPLocilize.lua"
         }
     ]
 }

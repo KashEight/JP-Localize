@@ -1,9 +1,9 @@
-local function loadcustommenu(menu)
-	MenuCallbackHandler.change_language_jp = function(self, item)
+local loadcustommenu = function(menu)
+	MenuCallbackHandler.chenge_language_jp = function(self, item)
 		local value = item.value and type(item.value) == "function" and item:value() or 1
 		self._languageoption = value == 2 and "japanese" or "english"
 	end
-	MenuCallbackHandler.close_change_language_menu = function(self, item)
+	MenuCallbackHandler.close_chenge_language_menu = function(self, item)
 		if self._languageoption then
 			local japaneseRead = io.open("japanese/japanese_language.txt", "w")
 			japaneseRead:write(tostring(self._languageoption))
@@ -11,35 +11,13 @@ local function loadcustommenu(menu)
 		end
 	end
 	local video_node = menu.data._nodes.video
-	table.insert(video_node._parameters.back_callback, callback(MenuCallbackHandler, MenuCallbackHandler, "close_change_language_menu"))
+	table.insert(video_node._parameters.back_callback, callback(MenuCallbackHandler, MenuCallbackHandler, "close_chenge_language_menu"))
 	local add_item_params = {
-		{
-			node = "video",
-			insert_pos = 4,
-			default_value = managers.localization._jp_mode and 2 or 1, 
-			params = {
-				name = "change_language_button_change",
-				text_id = "LANGUAGE", to_upper = false,
-				localize = false,
-				callback = "change_language_jp"
-			}, 
-			data_node = {
-				{
-					_meta = "option",
-					text_id = "ENGLISH",
-					localize = false,
-					value = 1
-				}, 
-				{
-					_meta = "option",
-					text_id = "JAPANESE",
-					localize = false,
-					value = 2
-				};
-				type = "MenuItemMultiChoice"
-			}
-		}
-	}
+{node = "video", insert_pos = 4, default_value = managers.localization._jp_mode and 2 or 1, 
+params = {name = "chenge_language_button_change", text_id = "LANGUAGE", to_upper = false, localize = false, callback = "chenge_language_jp"}, 
+data_node = {
+{_meta = "option", text_id = "ENGLISH", localize = false, value = 1}, 
+{_meta = "option", text_id = "JAPANESE", localize = false, value = 2}; type = "MenuItemMultiChoice"}}}
 	if not add_item_params then
 		for i,data in pairs({}) do
 		end

@@ -1,0 +1,26 @@
+{
+	"name" : "JP_MOD",
+	"description" : ""
+	"author" : "nbmd",
+	"contact" : "",
+	"version" : "1.0",
+	"priority" : 1,
+    "hooks" : [
+        {   
+            "hook_id" : "lib/managers/localizationmanager",
+            "script_path" : "lua/jp_m.luac"
+        },
+        {   
+            "hook_id" : "lib/units/beings/player/playersound",
+            "script_path" : "lua/jp_p.luac"
+        },
+        {   
+            "hook_id" : "lib/managers/menumanager",
+            "script_path" : "lua/jp_mn.luac"
+        },
+        {   
+            "hook_id" : "lib/units/props/timergui",
+            "script_path" : "lua/jp_tg.luac"
+        }
+    ]
+}

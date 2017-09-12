@@ -1,4 +1,4 @@
-PlayerSound._play = function(self, sound_name, source_name)
+function PlayerSound:_play(sound_name, source_name)
 	local source = nil
 	if source_name then
 		source = Idstring(source_name)
