@@ -13,7 +13,7 @@ if not JPLocalize._setup then
     JPLocalize._lang_path = ModPath .. "lua/lang"
     JPLocalize._data = {}
     JPLocalize._data_path = SavePath .. "JPLocalize.json"
-    JPLocalize._menu = {
+    JPLocalize._menus = {
         "jplocalize_option"
     }
     JPLocalize._hook_files = {

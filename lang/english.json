@@ -2,5 +2,7 @@
     "jplocalize_option": "JPLocalize",
     "jplocalize_option_desc": "Setting JPLocalize",
     "jplocalize_language": "language",
-    "jplocalize_language_desc": "Change the language you use. (need to restart.)"
+    "jplocalize_language_desc": "Change the language you use. (need to restart.)",
+    "language_english": "English",
+    "language_japanese": "Japanese / 日本語"
 }

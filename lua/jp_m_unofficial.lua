@@ -4,31 +4,6 @@ Hooks:Add("LocalizationManagerPostInit", "LocalizationManagerPostInit_JPLocalize
 		["english"] = JPLocalize._lang_path .. "english.lua",
 		["japanese"] = JPLocalize._lang_path .. "japanese.lua"
 	}
---[[
-	if not file_names then
-		for _, filename in pairs({}) do
-		end
-		local fo = io.open(filename, "r")
-		if fo then
-			local txt = fo:read("*a")
-			io.close(fo)
-			if txt then
-			end
-			if type(txt) == "string" then
-			end
-			local data = assert(loadstring("local text = {\n" .. txt .. "\n}return text"))()
-			if data then
-			end
-			if type(data) == "table" then
-			end
-			for i,v in pairs(data) do
-				if v ~= "" then
-					_r_new_texts[i] = v
-				end
-			end
-		end
-	end
-]]
 	local langid = JPLocalize:GetOption("language")
 	if JPLocalize._language[langid] == "japanese" then
 		local rats_texts = {}
@@ -2617,6 +2592,8 @@ Hooks:Add("LocalizationManagerPostInit", "LocalizationManagerPostInit_JPLocalize
 	end
 	self:add_localized_strings(_r_new_texts)
 end)
+
+Hooks:Remove("LocalizationManagerPostInit_JPLocalize_Game")
 
 function LocalizationManager:text(str, macros)
 	if self._custom_localizations[str] then

@@ -14,7 +14,7 @@ Hooks:Add("LocalizationManagerPostInit", "LocalizationManagerPostInit_JPLocalize
 end)
 
 Hooks:Add("MenuManagerInitialize", "MenuManagerInitialize_JPLocalize", function(menu_manager)
-	MenuCallBackHandler.callback_jplocalize_language = function(self, item)
+	MenuCallbackHandler.callback_jplocalize_language = function(self, item)
 		JPLocalize._data.language = item:value()
 		JPLocalize:Save()
 	end
