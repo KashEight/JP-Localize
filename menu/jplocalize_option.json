@@ -1,3 +1,21 @@
 {
-    
+    "menu_id": "jplocalize_option",
+    "parent_menu_id": "blt_options",
+    "title": "jplocalize_option",
+    "description": "jplocalize_option_desc",
+    "items": [
+        {
+            "type": "multiple_choice",
+            "id": "jplocalize_language",
+            "title": "jplocalize_language",
+            "description": "jplocalize_language_desc",
+            "callback": "callback_jplocalize_language",
+            "items": [
+                "language_english",
+                "language_japanese"
+            ],
+        "value": "language",
+        "default_value": 1
+        }
+    ]
 }

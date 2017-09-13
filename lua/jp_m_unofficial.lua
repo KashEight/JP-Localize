@@ -1,34 +1,25 @@
-Hooks:Add("LocalizationManagerPostInit", "LocalizationManagerPostInit_JPLoc", function(self)
-	local jr = io.open("japanese/japanese_language.txt", "r")
-	if jr then
-		for line in jr:lines() do
-			if line:find("japanese") then
-				self._jp_mode = true
-		else
-			end
-		end
-		io.close(jr)
-	end
+Hooks:Add("LocalizationManagerPostInit", "LocalizationManagerPostInit_JPLocalize_Game", function(self)
 	local _r_new_texts = {}
-	local file_names = {"japanese/english.lua"}
-	if self._jp_mode then
-		table.insert(file_names, "japanese/japanese.lua")
-	end
+	local file_names = {
+		["english"] = JPLocalize._lang_path .. "english.lua",
+		["japanese"] = JPLocalize._lang_path .. "japanese.lua"
+	}
+--[[
 	if not file_names then
-		for _,filename in pairs({}) do
+		for _, filename in pairs({}) do
 		end
 		local fo = io.open(filename, "r")
 		if fo then
 			local txt = fo:read("*a")
 			io.close(fo)
-		if txt then
+			if txt then
 			end
-		if type(txt) == "string" then
+			if type(txt) == "string" then
 			end
 			local data = assert(loadstring("local text = {\n" .. txt .. "\n}return text"))()
-		if data then
+			if data then
 			end
-		if type(data) == "table" then
+			if type(data) == "table" then
 			end
 			for i,v in pairs(data) do
 				if v ~= "" then
@@ -37,7 +28,9 @@ Hooks:Add("LocalizationManagerPostInit", "LocalizationManagerPostInit_JPLoc", fu
 			end
 		end
 	end
-	if self._jp_mode then
+]]
+	local langid = JPLocalize:GetOption("language")
+	if JPLocalize._language[langid] == "japanese" then
 		local rats_texts = {}
 		rats_texts.pln_rats_stage1_19_any_01 = {
 			{228, 189, 156}, 
@@ -2614,17 +2607,17 @@ Hooks:Add("LocalizationManagerPostInit", "LocalizationManagerPostInit_JPLoc", fu
 			{227, 129, 156}, 
 			{227, 128, 130}
 		}
-		for name,codes in pairats_texts) do
+		for name, codes in pairs(rats_texts) do
 			local str = ""
-			for _,code in pairs(codes) do
+			for _, code in pairs(codes) do
 				str = str .. string.char(unpack(code))
 			end
 			_r_new_texts[tostring(name)] = tostring(str)
 		end
 	end
 	self:add_localized_strings(_r_new_texts)
-end
-)
+end)
+
 function LocalizationManager:text(str, macros)
 	if self._custom_localizations[str] then
 		local return_str = self._custom_localizations[str]
