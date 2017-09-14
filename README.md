@@ -10,10 +10,10 @@ nbmd氏から削除依頼または公開上で問題が発生した場合は削�
 完全な構造:  
 ```
 lua-original/
- -jp_m.lua
- -jp_mn.lua
- -jp_p.lua
- -jp_tg.lua
+    -jp_m.lua
+    -jp_mn.lua
+    -jp_p.lua
+    -jp_tg.lua
 mod-original.txt
 ```
 
@@ -24,23 +24,23 @@ mod-original.txt
 `lua/lang/~` -> 日本語化modの言語ファイルを格納しています。  
 `menu/~` -> デフォルトの設定やメニューの設定のファイル(.json)を保管しています。
 `JPLocalize.lua` -> `mod.txt`に起動オプションをつけたファイルになります。  
-`mod.txt` -> `mod-original.txt`を元にBLT2.xに対応させたものになります。 
-完全な構造:   
+`mod.txt` -> `mod-original.txt`を元にBLT2.xに対応させたものになります。  
+完全な構造:  
 ```
 lang/
- -english.json
- -japanese.json
+    -english.json
+    -japanese.json
 lua/
- -lang/
-  -english.lua
-  -japanese.lua
- -jp_m_unofficial.lua
- -jp_mn_unofficial.lua
- -jp_p_unofficial.lua
- -jp_tg_unofficial.lua
+    -lang/
+        -english.lua
+        -japanese.lua
+    -jp_m_unofficial.lua
+    -jp_mn_unofficial.lua
+    -jp_p_unofficial.lua
+    -jp_tg_unofficial.lua
 menu/
- -jplocalize_default.json
- -jplocalize_option.json
+    -jplocalize_default.json
+    -jplocalize_option.json
 JPLocalize.lua
 mod.txt
 ```

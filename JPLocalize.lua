@@ -6,8 +6,8 @@ JPLocalize = JPLocalize or {}
 
 if not JPLocalize._setup then
     JPLocalize._language = {
-        [1] = english,
-        [2] = japanese
+        [1] = "english",
+        [2] = "japanese"
     }
     JPLocalize._path = ModPath
     JPLocalize._lang_path = ModPath .. "lua/lang"

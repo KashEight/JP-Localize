@@ -8,9 +8,9 @@ Hooks:Add("LocalizationManagerPostInit", "LocalizationManagerPostInit_JPLocalize
 			break
 		end
 	end
-
+	
 	lang:load_localization_file(JPLocalize._path .. "lang/english.json", false)
-
+	
 end)
 
 Hooks:Add("MenuManagerInitialize", "MenuManagerInitialize_JPLocalize", function(menu_manager)
