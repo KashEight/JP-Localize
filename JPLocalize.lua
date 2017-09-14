@@ -51,9 +51,9 @@ if not JPLocalize._setup then
     end
 
     function JPLocalize:InitAllMenus()
-		for _, menu in pairs(self._menus) do
-			MenuHelper:LoadFromJsonFile(self._path .. "menu/" .. menu .. ".json", self, self._data)
-		end
+	    for _, menu in pairs(self._menus) do
+	        MenuHelper:LoadFromJsonFile(self._path .. "menu/" .. menu .. ".json", self, self._data)
+	    end
 	end
 
     function JPLocalize:GetOption(id)
