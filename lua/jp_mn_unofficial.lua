@@ -1,10 +1,10 @@
-Hooks:Add("LocalizationManagerPostInit", "LocalizationManagerPostInit_JPLocalize_Menu", function(lang)
+Hooks:Add("LocalizationManagerPostInit", "LocalizationManagerPostInit_JPLocalize", function(lang)
 	for _, filename in pairs(file.GetFiles(JPLocalize._path .. "lang/")) do
 		local str = filename:match('^(.*).json$')
 		local langid = JPLocalize:GetOption("language")
 		if str == JPLocalize._language[langid] then
 			lang:load_localization_file(JPLocalize._path .. "lang/" .. filename)
-			log("[JPLocalize Info] Selected language: " .. filename)
+			log("[JPLocalize Info] Selected language: " .. str)
 			break
 		end
 	end
