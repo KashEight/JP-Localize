@@ -1,3 +1,4 @@
+--[[
 Hooks:Add("LocalizationManagerPostInit", "LocalizationManagerPostInit_JPLocalize_Game", function(self)
 	local _r_new_texts = {}
 	local file_names = {
@@ -2595,6 +2596,7 @@ end)
 
 Hooks:Remove("LocalizationManagerPostInit_JPLocalize_Game")
 
+
 function LocalizationManager:text(str, macros)
 	if self._custom_localizations[str] then
 		local return_str = self._custom_localizations[str]
@@ -2609,4 +2611,34 @@ function LocalizationManager:text(str, macros)
 		return return_str
 	end
 	return self.orig.text(self, str, macros)
+end
+]]
+
+local lang = {}
+local lua_file = {}
+local content = {}
+for k, l in ipairs(JPLocalize._language) do
+	for _, filename in pairs(file.GetFiles(JPLocalize._lang_path)) do
+		local str = filename:match('^(.*).lua$')
+		if str == l then
+			lang[k] = l
+			table.insert(lua_file, filename)
+		end
+	end
+end
+local langid = JPLocalize:GetOption("language")
+local lang_file = io.open(lua_file[langid], "r") -- TODO: cannot open the lua file. i have to solve.
+if lang_file then
+	log("opened lua file")
+	local text = lang_file:read("*a")
+	lang_file:close()
+	local data = assert(loadstring("local func_text = {\n" .. text .. "\n}return func_text"))()
+	for id, name in pairs(data) do
+		if name ~= "" then
+			content[id] = name
+		end
+	end
+	LocalizationManager:add_localized_strings(content)
+else
+	log("could not open lua file")
 end
