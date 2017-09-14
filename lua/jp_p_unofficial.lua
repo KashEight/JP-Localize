@@ -30,7 +30,7 @@ function PlayerSound:_play(sound_name, source_name)
 				managers.subtitle:set_visible(true)
 				managers.subtitle:set_enabled(true)
 				managers.subtitle:clear_subtitle()
-				managers.subtitle:show_subtitle(subtitle, args[5])
+				managers.subtitle:show_subtitle(tostring(subtitle), args[5]) -- TODO: avoid crashing amd error
 			end
 			self.sound_callback(...)
 	end
