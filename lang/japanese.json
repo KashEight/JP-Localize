@@ -1,6 +1,6 @@
 {
     "jplocalize_option": "JPLocalize",
-    "jplocalize_option_desc": "Setting JPLocalize.",
+    "jplocalize_option_desc": "JPLocalizeを設定します。",
     "jplocalize_language": "言語",
     "jplocalize_language_desc": "使用する言語を変更します。 (再起動が必要です。)",
     "language_english": "English",
