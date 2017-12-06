@@ -1,29 +1,34 @@
 {
-	"name" : "JP_MOD_Unofficial",
-	"description" : "Customize for BLT2.0",
-	"author" : "nbmd, kash",
-	"contact" : "https://github.com/KashEight",
-	"version" : "1.0-unofficial",
-	"priority" : 1,
+	"name": "JP_MOD_Unofficial",
+	"description": "Customize for BLT2.0",
+	"author": "nbmd, kash / Hytus",
+	"contact": "https://github.com/KashEight",
+	"version": "1.0-unofficial",
+	"priority": 1,
     "blt_version": 2,
     "color": "255 0 0",
-    "undisablable" : true, 
-    "hooks" : [
+    "undisablable": true, 
+    "hooks": [
         {   
-            "hook_id" : "lib/managers/localizationmanager",
-            "script_path" : "JPLocalize.lua"
+            "hook_id": "lib/managers/localizationmanager",
+            "script_path": "JPLocalize.lua"
         },
         {   
-            "hook_id" : "lib/units/beings/player/playersound",
-            "script_path" : "JPLocalize.lua"
+            "hook_id": "lib/units/beings/player/playersound",
+            "script_path": "JPLocalize.lua"
         },
         {   
-            "hook_id" : "lib/managers/menumanager",
-            "script_path" : "JPLocalize.lua"
+            "hook_id": "lib/managers/menumanager",
+            "script_path": "JPLocalize.lua"
         },
         {   
-            "hook_id" : "lib/units/props/timergui",
-            "script_path" : "JPLocalize.lua"
+            "hook_id": "lib/units/props/timergui",
+            "script_path": "JPLocalize.lua"
+        }
+    ],
+    "updates": [
+        {
+            "identifier": "JPLocalize"
         }
     ]
 }
