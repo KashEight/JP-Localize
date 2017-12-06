@@ -3,7 +3,7 @@
 	"description": "Customize for BLT2.0",
 	"author": "nbmd, kash / Hytus",
 	"contact": "https://github.com/KashEight",
-	"version": "1.0-unofficial",
+	"version": "1.1",
 	"priority": 1,
     "blt_version": 2,
     "color": "255 0 0",
