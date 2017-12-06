@@ -29,6 +29,12 @@
     "updates": [
         {
             "identifier": "JPLocalize"
+        },
+        {
+            "identifier" : "JPFonts",
+            "install_dir" : "assets/mod_overrides/",
+            "install_folder" : "JPFonts",
+            "display_name" : "JPFonts"
         }
     ]
 }
