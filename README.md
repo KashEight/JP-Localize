@@ -1,6 +1,9 @@
 # 概要
 nbmd氏が作成したPAYDAY2日本語化MODのファイル群を保存、それをもとにBLT2.x系への対応及び、内部コードの整理等を行っています。  
 nbmd氏から削除依頼または公開上で問題が発生した場合は削除いたします。  
+**重要**:  
+自身の環境変化等によりアップデートはほぼない状況です。ご了承ください。  
+参考: https://github.com/KashEight/JP-Localize/issues/2  
 
 # フォルダ説明
 **Original版**  
@@ -16,12 +19,11 @@ lua-original/
 mod-original.txt
 ```
 
-
 **Unofficial版**  
 `lang/~` -> 日本語化mod-unofficial版のメニューの言語ファイル(.json)を保管しています。  
 `lua/~` -> `lua-original/~`を元に加筆、修正を行っております。ファイルは全て`<元のファイル名>_unofficial.lua`となります。  
 `lua/lang/~` -> 日本語化modの言語ファイルを格納しています。  
-`menu/~` -> デフォルトの設定やメニューの設定のファイル(.json)を保管しています。
+`menu/~` -> デフォルトの設定やメニューの設定のファイル(.json)を保管しています。  
 `JPLocalize.lua` -> `mod.txt`に起動オプションをつけたファイルになります。  
 `mod.txt` -> `mod-original.txt`を元にBLT2.xに対応させたものになります。  
 完全な構造:  
@@ -47,4 +49,4 @@ mod.txt
 # Thanks
 nbmd氏 - PAYDAY2日本語化MODの作成、及び公開。  
 hinata氏 - luacファイルの逆コンパイル、アドバイス等。  
-PAYDAY2の翻訳を手伝っている方々、その他、PAYDAY2日本語化MODコミュニティーの方々。  
+PAYDAY2の翻訳を手伝っている方々、その他、PAYDAY2日本語化MODコミュニティーの方々。
