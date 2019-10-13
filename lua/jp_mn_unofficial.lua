@@ -1,24 +1,24 @@
 Hooks:Add("LocalizationManagerPostInit", "LocalizationManagerPostInit_JPLocalize", function(lang)
-	for _, filename in pairs(file.GetFiles(JPLocalize._path .. "lang/")) do
-		local str = filename:match('^(.*).json$')
-		local langid = JPLocalize:GetOption("language")
-		if str == JPLocalize._language[langid] then
-			lang:load_localization_file(JPLocalize._path .. "lang/" .. filename)
-			log("[JPLocalize Info] Selected language: " .. str)
-			break
-		end
-	end
-	
-	lang:load_localization_file(JPLocalize._path .. "lang/english.json", false)
-	
+    for _, filename in pairs(file.GetFiles(JPLocalize._path .. "lang/")) do
+        local str = filename:match('^(.*).json$')
+        local langid = JPLocalize:GetOption("language")
+        if str == JPLocalize._language[langid] then
+            lang:load_localization_file(JPLocalize._path .. "lang/" .. filename)
+            log("[JPLocalize Info] Selected language: " .. str)
+            break
+        end
+    end
+
+    lang:load_localization_file(JPLocalize._path .. "lang/english.json", false)
+
 end)
 
 Hooks:Add("MenuManagerInitialize", "MenuManagerInitialize_JPLocalize", function(menu_manager)
-	MenuCallbackHandler.callback_jplocalize_language = function(self, item)
-		JPLocalize._data.language = item:value()
-		JPLocalize:Save()
-	end
+    MenuCallbackHandler.callback_jplocalize_language = function(self, item)
+        JPLocalize._data.language = item:value()
+        JPLocalize:Save()
+    end
 
-	JPLocalize:Load()
-	JPLocalize:InitAllMenus()
+    JPLocalize:Load()
+    JPLocalize:InitAllMenus()
 end)
